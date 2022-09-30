@@ -34,6 +34,7 @@ namespace UserMaintenance
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnWriteToFile = new System.Windows.Forms.Button();
+            this.btnRemoveFromFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -80,11 +81,22 @@ namespace UserMaintenance
             this.btnWriteToFile.UseVisualStyleBackColor = true;
             this.btnWriteToFile.Click += new System.EventHandler(this.btnWriteToFile_Click);
             // 
+            // btnRemoveFromFile
+            // 
+            this.btnRemoveFromFile.Location = new System.Drawing.Point(175, 153);
+            this.btnRemoveFromFile.Name = "btnRemoveFromFile";
+            this.btnRemoveFromFile.Size = new System.Drawing.Size(167, 23);
+            this.btnRemoveFromFile.TabIndex = 7;
+            this.btnRemoveFromFile.Text = "button1";
+            this.btnRemoveFromFile.UseVisualStyleBackColor = true;
+            this.btnRemoveFromFile.Click += new System.EventHandler(this.btnRemoveFromFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 450);
+            this.Controls.Add(this.btnRemoveFromFile);
             this.Controls.Add(this.btnWriteToFile);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtFullName);
@@ -104,6 +116,7 @@ namespace UserMaintenance
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnWriteToFile;
+        private System.Windows.Forms.Button btnRemoveFromFile;
     }
 }
 

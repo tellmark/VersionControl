@@ -79,6 +79,15 @@ namespace UserMaintenance {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Törlés.
+        /// </summary>
+        internal static string RemoveFromFile {
+            get {
+                return ResourceManager.GetString("RemoveFromFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fájlba írás.
         /// </summary>
         internal static string WriteToFile {
