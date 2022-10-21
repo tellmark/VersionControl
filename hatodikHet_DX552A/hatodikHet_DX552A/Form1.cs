@@ -19,10 +19,16 @@ namespace hatodikHet_DX552A
         public Form1()
         {
             InitializeComponent();
-            sep_function();
+            RefreshData();
             dgw1.DataSource = Rates;
+        }
+
+        private void RefreshData()
+        {
+            sep_function();
             xml_process();
             show_graph();
+            Rates.Clear();
         }
         private string sep_function()
         {
@@ -30,9 +36,9 @@ namespace hatodikHet_DX552A
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
+                currencyNames = comboBox1.SelectedItem.ToString(),
+                startDate = dateTimePicker1.Value.ToString(),
+                endDate = dateTimePicker2.Value.ToString()
             };
 
             var response = mnbService.GetExchangeRates(request);
@@ -79,6 +85,21 @@ namespace hatodikHet_DX552A
             chartArea.AxisY.MajorGrid.Enabled = false;
             chartArea.AxisY.IsStartedFromZero = false;
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
