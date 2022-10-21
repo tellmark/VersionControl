@@ -16,19 +16,22 @@ namespace hatodikHet_DX552A
     public partial class Form1 : Form
     {
         BindingList<Entities.RateData> Rates = new BindingList<Entities.RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
             InitializeComponent();
             RefreshData();
-            dgw1.DataSource = Rates;
         }
 
+        
         private void RefreshData()
         {
             sep_function();
             xml_process();
             show_graph();
             Rates.Clear();
+            dgw1.DataSource = Rates;
+            //comboBox1.DataSource = Currencies;
         }
         private string sep_function()
         {
