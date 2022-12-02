@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TizenegyedikHet_DX552A.Entities
 {
-    class Gender
+    public enum Gender
     {
+        Male = 1,
+        Female = 2
     }
+
+
 }
