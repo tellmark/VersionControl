@@ -24,8 +24,11 @@ namespace TizenegyedikHet_DX552A
             Population = GetPopulation(@"C:\Temp\nép.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
+        }
 
-            for (int year = 2005; year <= 2024; year++)
+        public void Simulation()
+        {
+            for (int year = 2005; year <= numericUpDown1.Value; year++)
             {
                 for (int i = 0; i < Population.Count; i++)
                 {
@@ -125,6 +128,21 @@ namespace TizenegyedikHet_DX552A
                     Population.Add(újszülött);
                 }
             }
+        }
+
+        private void start_btn_Click(object sender, EventArgs e)
+        {
+            Simulation();
+        }
+
+        private void browse_btn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                browse_txtbox.Text = ofd.FileName;
+            }
+
         }
     }
 }
