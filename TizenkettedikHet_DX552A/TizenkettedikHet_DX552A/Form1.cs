@@ -30,9 +30,9 @@ namespace TizenkettedikHet_DX552A
             gc.GameOver += Gc_GameOver;
             for (int i = 0; i < populationSize; i++)
             {
-                gc.AddPlayer();
+                gc.AddPlayer(nbrOfSteps);
             }
-            gc.Start(true);
+            gc.Start();
             button1.Visible = false;
 
         }
@@ -40,9 +40,7 @@ namespace TizenkettedikHet_DX552A
         private void Gc_GameOver(object sender)
         {
             generation++;
-            label1.Text = string.Format(
-                "{0}. generáció",
-                generation);
+            label1.Text = string.Format("{0}. generáció", generation);
             var playerList = from p in gc.GetCurrentPlayers()
                              orderby p.GetFitness() descending
                              select p;
